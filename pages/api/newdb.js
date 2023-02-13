@@ -18,7 +18,7 @@ export default async function handler(req, res) {
   (async () => {
     // open the database
     const db = await open({
-      filename: '/tmp/database.db',
+      filename: './ProcessedOrders.db',
       driver: sqlite3.Database
     })
     await db.exec('CREATE TABLE tutorials (id int primary key, titulo varchar, url varchar, img varchar, content varchar)');

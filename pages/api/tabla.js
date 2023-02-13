@@ -6,12 +6,12 @@ import { open } from 'sqlite'
     (async () => {
         // open the database
         const db = await open({
-          filename: '/tmp/database.db',
+          filename: './ProcessedOrders.db',
           driver: sqlite3.Database
         })
         const result = await db.all('SELECT * FROM tutorials')
-        // console.log(result)
-        const db2 = new sqlite3.Database(':memory:');
+        console.log(result)
+        // const db2 = new sqlite3.Database(':memory:');
         return res.status(200).json(result)
     })()
   }
